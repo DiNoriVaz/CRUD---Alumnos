@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     public function up(): void
-    {
-        Schema::create('alumnos', function (Blueprint $table) {
-            $table->id();
-            $table->string('codigo');
-            $table->string('nombre');
-            $table->string('correo')->unique();
-            $table->date('fecha_nacimiento');
-            $table->enum('sexo', ['M', 'F']);
-            $table->string('carrera');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('alumnos', function (Blueprint $table) {
+        $table->id();
+        $table->string('codigo');
+        $table->string('nombre');
+        $table->string('correo')->unique();
+        $table->date('fecha_nacimiento');
+        $table->string('sexo');
+        $table->string('carrera');
+        $table->timestamps();
+    });
+}
 
     public function down(): void
     {
